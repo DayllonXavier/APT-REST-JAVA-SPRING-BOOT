@@ -20,4 +20,6 @@ public interface UserRepository extends JpaRepository<User, Long> {
             " (:nomeSocial <> '' AND LOWER(user.nomeSocial) LIKE LOWER(CONCAT(:nomeSocial, '%'))) OR" +
             " (:email <> '' AND LOWER(user.email) LIKE LOWER(CONCAT(:email, '%')))")
     Page<User> findAllUsersByFilterOr(String nomeCompleto, String nomeSocial, String email, Pageable pageable);
+
+    boolean existsByCodigo(Long codigo);
 }

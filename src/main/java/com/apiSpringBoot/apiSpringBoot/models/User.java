@@ -15,9 +15,10 @@ public class User {
     @Column(nullable = false)
     private String nomeSocial;
     private String dataNasc;
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private Long codigo;
-    private char sexo;
+    @Column(nullable = true)
+    private String sexo;
     @Column(nullable = false)
     private String email;
     private String estado;
@@ -32,7 +33,7 @@ public class User {
     public User(){
     }
 
-    public User(Long id, String nomeCompleto, String nomeSocial, String dataNasc, Long codigo, char sexo, String email, String estado, String municipio, Long numAcessos, String situacao, String dataVinculo) {
+    public User(Long id, String nomeCompleto, String nomeSocial, String dataNasc, Long codigo, String sexo, String email, String estado, String municipio, Long numAcessos, String situacao, String dataVinculo) {
         this.id = id;
         this.nomeCompleto = nomeCompleto;
         this.nomeSocial = nomeSocial;
@@ -87,11 +88,11 @@ public class User {
         this.codigo = codigo;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
