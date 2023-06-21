@@ -27,6 +27,12 @@ public class UserController {
         return ResponseEntity.ok(result);
     }
 
+    @GetMapping("filter")
+    public ResponseEntity<Page<User>> findAllUsersByFilter(@RequestParam(defaultValue = "") String filter, Pageable pageable){
+        Page<User> result = userRepository.findAllUsersByFilter(filter, pageable);
+        return ResponseEntity.ok(result);
+    }
+
     @GetMapping("filterAnd")
     //Retorna todos os usuários que possuem o prefixo em comum com o nome completo, nome social E email.
     public ResponseEntity<Page<User>> findAllUsersByFilterAnd(
@@ -57,11 +63,11 @@ public class UserController {
     @PostMapping("csv")
     public void registerUsersByCsv(@RequestParam("file") MultipartFile file) throws Exception{
         InputStream inputStream = file.getInputStream();
-        CsvParserSettings setting = new CsvParserSettings();
-        setting.setHeaderExtractionEnabled(true);
-        CsvParser parser = new CsvParser(setting);
+        CsvParserSettings settings = new CsvParserSettings();
+        settings.setHeaderExtractionEnabled(true);
+        settings.getFormat().setLineSeparator("\n");
+        CsvParser parser = new CsvParser(settings);
         parser.beginParsing(inputStream);
-
         for (Record record = parser.parseNextRecord(); record != null; record = parser.parseNextRecord()){
             User user = new User();
             user.setNomeCompleto(record.getString("Nome completo"));

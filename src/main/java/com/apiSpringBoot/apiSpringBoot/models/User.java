@@ -23,7 +23,6 @@ public class User {
     private String email;
     private String estado;
     private String municipio;
-    //@Column(nullable = false, columnDefinition = "default 0")
     @Value("0")
     private Long numAcessos;
     private String situacao;
