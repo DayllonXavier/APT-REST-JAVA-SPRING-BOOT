@@ -1,4 +1,0 @@
-Register:
-    Retornar erro apropriado caso tenha algum dado not null faltando (ERRO 500 evitar)
-Update:
-    Poder alterar apenas um campo (nao todos de uma vez) passando o id tambem

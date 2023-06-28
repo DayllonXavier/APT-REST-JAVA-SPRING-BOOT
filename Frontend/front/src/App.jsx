@@ -11,10 +11,10 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(filter)
-    console.log(API + "?filter=" + filter)
+    console.log(API + "?filtro=" + filter)
 
     
-      /*fetch(API + "?filter=" + filter, {
+    fetch(API + "?filtro=" + filter, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -23,7 +23,7 @@ function App() {
         .then(response => response.json())
         .then(data => {
           setUsers(data)
-        })*/
+        })
       
   };
 
