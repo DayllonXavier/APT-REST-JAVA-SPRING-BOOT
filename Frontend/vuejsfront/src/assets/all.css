@@ -1,0 +1,75 @@
+body {
+    background-color: #e8dcdc;
+}
+
+.App {
+    width: 1150px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 15px;
+    padding: 3px 20px;
+    border: solid 2px rgb(6, 108, 142);
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 100px;
+}
+
+.listUsers {
+    border-collapse: collapse;
+    min-width: 600px;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.listUsers thead tr {
+    background-color: rgb(132, 200, 195);
+    font-weight: bold;
+}
+
+.listUsers th,
+.listUsers td {
+    padding: 10px 10px;
+    text-align: center;
+}
+
+.listUsers tbody tr {
+    border-bottom: 1px solid #aeabab;
+}
+
+.listUsers tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.listUsers tbody tr:last-of-type {
+    border-bottom: 1px solid rgb(132, 200, 195);
+}
+
+.listUsers tbody tr:hover {
+    background-color: rgba(132, 200, 195, 0.35);
+    color: black;
+}
+
+.filterSearch input {
+    font-size: 15pt;
+    padding: 10px;
+    margin: 10px 0;
+    width: 88%;
+}
+
+.filterSearch button {
+    font-size: 15pt;
+    background-color: rgb(132, 200, 195);
+    border: 1px solid #d6d6d6;
+    padding: 11px 10px;
+    margin: 2px 0;
+    margin-left: 15px;
+    width: 8%;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.filterSearch button:hover {
+    background-color: rgb(6, 108, 142);
+    color: #d6d6d6;
+    cursor: pointer;
+}
